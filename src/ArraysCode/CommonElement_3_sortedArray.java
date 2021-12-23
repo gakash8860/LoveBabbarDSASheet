@@ -5,8 +5,15 @@ import java.util.ArrayList;
 public class CommonElement_3_sortedArray {
     public static void main(String[] args) {
 
+        int[] A = {1, 5, 10, 20, 40, 80};
+        int[] B = {6, 7, 20, 80, 100};
+        int[] C = {3, 4, 15, 20, 30, 70, 80, 120};
+        System.out.println(commonElements(A,B,C));
     }
-    public static ArrayList<Integer> commonElements(int A[], int B[], int C[], int n1, int n2, int n3)
+
+
+
+    public static ArrayList<Integer> commonElements(int A[], int B[], int C[])
     {
         // code here
         ArrayList<Integer> common = new ArrayList<Integer>();

@@ -14,27 +14,39 @@ public class CommonElement_3_sortedArray {
 
 
     public static ArrayList<Integer> commonElements(int A[], int B[], int C[])
-    {
-        // code here
-        ArrayList<Integer> common = new ArrayList<Integer>();
-//        int A[] = {2, 4, 8};
-//        int B[] = {2, 3, 4, 8, 10, 16};
-//        int[] C = {4, 8, 14, 40};
-        int x = 0, y = 0, z = 0;
-        while (x < A.length && y < B.length && z < C.length){
-            if (A[x] == B[y] && B[y] == C[z]){
-                common.add(A[x]);
-                x++;
-                y++;
-                z++;
+{
+        List<Integer> result = new ArrayList<>();
+
+
+        int i = 0, j = 0, k = 0;
+
+
+        while (i < n1 && j < n2 && k < n3) {
+
+            if (A[i] == B[j] && B[j] == C[k]) {
+
+                if (result.isEmpty() || result.get(result.size() - 1) != A[i]) {
+                    result.add(A[i]);
+                }
+                i++;
+                j++;
+                k++;
             }
-            else if (A[x] < B[y])
-                x++;
-            else if (B[y] < C[z])
-                y++;
-            else
-                z++;
+
+            else if (A[i] < B[j]) {
+                i++;
+            }
+
+            else if (B[j] < C[k]) {
+                j++;
+            }
+
+            else {
+                k++;
+            }
         }
-        return common;
+
+        return result;
     }
+
 }

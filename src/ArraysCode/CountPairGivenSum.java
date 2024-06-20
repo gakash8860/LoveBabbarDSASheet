@@ -6,14 +6,21 @@ public class CountPairGivenSum {
         System.out.println(getPairCount(arr,6));
     }
     public static int getPairCount(int[]arr,int k){
-        int min =arr[0];
-        int count = 0;
-        for (int i=0; i<arr.length;i++){
-            if (arr[i]+min ==k){
-                count++;
-                min = arr[i];
+        Map<Integer, Integer> frequencyMap = new HashMap<>();
+        int counter = 0;
+
+
+        for (int num : arr) {
+
+            int complement = k - num;
+
+            if (frequencyMap.containsKey(complement)) {
+                counter += frequencyMap.get(complement);
             }
+            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
         }
-        return count;
+
+        return counter;
+
     }
 }
